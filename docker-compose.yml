@@ -1,0 +1,34 @@
+version: '3'
+services:
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    expose:
+    - "5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+    - 5672:5672
+    - 15672:15672
+  core:
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+      - db
+    build: ./core
+    volumes:
+    - /tmp/jasmin/log:/var/log/jasmin
+    - /tmp/jasmin/store:/etc/jasmin/store
+    links:
+    - rabbitmq
+    - db
+    ports:
+      - 8888:8888
+
