@@ -1,8 +1,11 @@
 version: '3'
 services:
   db:
+    hostname: db
     image: mongo
     restart: always
+    expose:
+    - "27017"
     ports:
       - 27017:27017
   rabbitmq:

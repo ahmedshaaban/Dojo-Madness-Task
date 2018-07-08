@@ -34,7 +34,7 @@ def make_app():
     ])  
 
 if __name__ == "__main__":
-    db = motor.motor_tornado.MotorClient().task_db
+    db = motor.motor_tornado.MotorClient('db', 27017).task_db
     io = ioloop.IOLoop.current()
     pc = PikaClient(io, db)
     pc.connect()
