@@ -10,8 +10,8 @@ Dojo Madness Task
     1. open a new terminal in the same directory and run `virtualenv --distribute --no-site-packages ./venv`
     2. run `source ./venv/bin/activate`
     3. run `pip install -r requirements.pip`
-    4. run `python send.py`
-    5. check the client side
+    4. run `python send.py` (please not if you Interrupt the rabbitmq client session get closed according to the test file you sent earlier)
+    5. check the client side 
 ----
 
 #### to connect to the db:
