@@ -4,7 +4,7 @@ Dojo Madness Task
 #### to run app:
 
 1. The setting assumes that there is no mongodb or rabbitmq installed on the machine, if no please stop both of the services                
-2. open a new terminal and run `docker-compose build && docker-compose up -d`
+2. open a new terminal and run `docker-compose build && docker-compose up`
 3. Client side can be reached through [Here](http://localhost:8888)
 4. To send msg please do as follow:
     1. open a new terminal in the same directory and run `virtualenv --distribute --no-site-packages ./venv`
