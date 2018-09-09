@@ -4,7 +4,6 @@ Tornado-Rabbitmq
 * consume messages (content type "application/json") from [RabbitMQ](https://www.rabbitmq.com/) and store them in [MongoDB](https://www.mongodb.com/)
 * provide websocket endpoint that publishes incoming messages to websocket clients _as they arrive_ from RabbitMQ
 * the routing key format is `{collection}.{_id}` denoting MongoDB collection and document `_id` eg. a message with routing key `foo.bar` should be inserted in collection "foo" with document \_id "bar"
-* no assumptions should be made on the type or validity of the routing key, whatever MongoDB accepts is valid
 
 #### to run app:
 
